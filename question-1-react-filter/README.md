@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# React Item Filter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o projeto
 
-Currently, two official plugins are available:
+Este projeto é uma aplicação simples desenvolvida em **React com TypeScript** que demonstra uma funcionalidade de **filtro dinâmico de itens**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A interface exibe uma lista de itens e permite que o usuário pesquise por um item específico utilizando um campo de busca. Conforme o usuário digita, a lista é filtrada automaticamente em tempo real.
 
-## React Compiler
+O objetivo desta implementação é demonstrar conceitos fundamentais do React, como:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Estrutura de componentes
+- Gerenciamento de estado com React Hooks **(useState e useEffect)**
+- Inputs controlados
+- Renderização de listas
+- Organização de projeto
+- Boas práticas básicas de acessibilidade
 
-## Expanding the ESLint configuration
+## Tecnologias utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- CSS
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Detalhes da implementação
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+A lógica de filtragem foi implementada utilizando **React Hooks**.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **useState** foi utilizado para armazenar o valor digitado pelo usuário no campo de busca.
+- **useEffect** pode ser utilizado para reagir a mudanças no estado quando necessário.
+- A lista de itens é filtrada dinamicamente com base no valor da busca.
+- O input foi implementado como um **componente controlado**, ou seja, seu valor é controlado pelo estado do React.
+
+O projeto também foi organizado em pastas para separar responsabilidades:
+
+```
+src/
+  components/
+  data/
+  types/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **components**: componentes reutilizáveis da interface  
+- **data**: dados mock utilizados na aplicação  
+- **types**: definições de tipos utilizando TypeScript  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Como executar o projeto
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**1. Clonar o repositório**
+
+```bash
+git clone https://github.com/alexmacieldeveloper/bm-tax-front-end-test/
 ```
+
+**2. Acessar a pasta do projeto**
+
+```bash
+cd question-1-react-filter
+```
+
+**3. Instalar as dependências**
+
+```bash
+npm install
+```
+
+**4. Executar o projeto**
+
+```bash
+npm run dev
+```
+
+**O projeto estará disponível em:**
+
+http://localhost:5173/
+
+## Versões utilizadas
+
+Durante o desenvolvimento foram utilizadas as seguintes versões:
+
+**Node.js 20.19.4**
+
+**npm 10.8.2**
+
+**React 19.2.0**
+
+**Vite 7.3.1**
+
